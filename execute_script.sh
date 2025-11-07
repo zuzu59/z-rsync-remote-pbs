@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 #Exécute le script via deux tunnels ssh imbriqués
-#zf251107.1624, #zf251107.1624
+#zf251107.1624, #zf251107.1635
+
+echo -e "\nCreuse les tunnels et exécute le script...\n"
 
 ssh -J root@z.zufferey.com:1822                    \
     -R 2222:localhost:22                             \
