@@ -1,10 +1,30 @@
 #!/usr/bin/env bash
 #Petit script pour exécuter un rsync entre la source et le remote via le port 2222
-#zf251107.1633, zf251208.1304
+#zf251107.1633, zf251209.0917
+
+
+RSYNC_CMD="--delete --max-delete=20 -r -v -t --progress --stats --modify-window=1 -e 'ssh -p 2222' /mnt/datastore/ext-1/ master@localhost:/volume2/BIGDATA/data/backup_pbs_crissier_ext-1_251208.1313/"
+#           --delete --max-delete=20 -r -v -t --progress --stats --modify-window=1 -e ssh  root@192.168.0.31:/mnt/pve/ext-1/ /mnt/pve/ext-3/data/backup-proxmox-crissier-251113.1231/"
+
+
+echo -e "\nExécute le rsync en mode test...\n"
+
+date +"%F %T" ; time rsync -n $RSYNC_CMD ; date +"%F %T"
+
+
+read -p "Voulez-vous continuer le rsync sans le mode test ?"
+read -p "Etes-vous certain de vouloir continuer ?"
 
 echo -e "\nExécute le rsync...\n"
 
-cd ~/dev/z-rsync-remote-pbs
+date +"%F %T" ; time rsync $RSYNC_CMD ; date +"%F %T"
+
+date > tata.txt
+echo -e "\nFin du procéssus...\n"
+
+
+exit
+
 
 date +"%F %T"
 
