@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 #Petit script pour exécuter un rsync entre la source et le remote via le port 2222
-#zf251107.1633, zf251209.0951
+#zf251107.1633, zf251209.0951, zf260110.1934
 
 
 
 RSYNC_CMD=(
   --delete
-  --max-delete=200
   -r -v -t
   --progress --stats --modify-window=1
   -e "ssh -p 2222"
@@ -25,7 +24,7 @@ read -p "Etes-vous certain de vouloir continuer ?"
 
 echo -e "\nExécute le rsync...\n"
 date +"%F %T"
-time rsync "${RSYNC_CMD[@]}"
+time rsync --max-delete=20000 "${RSYNC_CMD[@]}"
 date +"%F %T"
 
 
