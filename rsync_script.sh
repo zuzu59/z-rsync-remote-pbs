@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour exécuter un rsync entre la source et le remote via le port 2222
-#zf251107.1633, zf251209.0951, zf260110.1934
+#zf251107.1633, zf251209.0951, zf260323.1145
 
 
 
@@ -10,7 +10,7 @@ RSYNC_CMD=(
   --progress --stats --modify-window=1
   -e "ssh -p 2222"
   /mnt/datastore/ext-1/
-  master@localhost:/volume2/BIGDATA/data/backup_pbs_crissier_ext-1_251208.1313/
+  master@localhost:/volume2/BIGDATA/data/backup_pbs_crissier_ext-1_260323.1143/
 )
 
 echo -e "\nExécute le rsync en mode test...\n"
