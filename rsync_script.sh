@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour exécuter un rsync entre la source et le remote via le port 2222
-#zf251107.1633, zf251209.0951, zf260323.1145
+#zf251107.1633, zf251209.0951, zf260324.0922
 
 
 
@@ -29,7 +29,7 @@ date +"%F %T"
 
 
 date > tata.txt
-echo -e "\nFin du procéssus...\n"
+echo -e "\nFin du processus...\n"
 
 
 exit
