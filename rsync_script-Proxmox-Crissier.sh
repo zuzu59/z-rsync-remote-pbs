@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour exécuter un rsync entre la source et le remote via le port 2222, pour le rsync de Proxmox Crissier sur le Synogmère
-#zf251107.1633, zf251209.0951, zf260711.1530
+#zf251107.1633, zf251209.0951, zf260711.1656
 
 
 
@@ -10,7 +10,7 @@ RSYNC_CMD=(
   --progress --stats --modify-window=1
   -e "ssh -p 2222"
   /mnt/pve/ext-1/
-  master@localhost:/volume1/homes/master/data/backup_proxmox_crissier_ext1__260711.1529/
+  master@localhost:/volume1/homes/master/data/backup_proxmox_crissier_ext1_260711.1529/
 )
 
 echo -e "\nExécute le rsync en mode test...\n"
